@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Strega — boceto del sitio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#2A2925;--ink2:#45423B;--mute:#5E5A52;--ground:#F6F4EF;--ground2:#EFEBE3;--ph:#EAE6DD;--line:#8A857A;--x:#C8C2B5;--note:#1F4E79}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:'Atkinson Hyperlegible',system-ui,sans-serif}
+a{color:var(--note)}a:hover{color:#143552}
+h1,h2,h3,.brand{font-family:'Bricolage Grotesque',sans-serif}
+.wrap{max-width:1200px;margin:0 auto;padding:72px 24px}
+.eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+h2{margin:0;font-size:clamp(30px,3.6vw,44px);line-height:1.1}
+.row{display:flex;flex-wrap:wrap;gap:48px;align-items:center}
+.col{flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:18px}
+.lead{margin:0;font-size:18px;line-height:1.6;color:var(--ink2)}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 24px;border-radius:999px;text-decoration:none;font-weight:700;font:inherit;font-weight:700;font-size:16px;cursor:pointer}
+.btn.solid{background:var(--ink);color:var(--ground);border:0}
+.btn.line{border:1.5px solid var(--ink);color:var(--ink);background:transparent}
+.btn:hover{opacity:.88}
+.note{margin:0;font-size:13px;color:var(--note);border-top:1px dashed var(--note);padding-top:10px}
+body.no-notes .note{display:none}
+.ph{position:relative;background:var(--ph);border:1.5px dashed var(--line);border-radius:8px;overflow:hidden;display:flex;align-items:flex-end;padding:12px}
+.ph svg{position:absolute;inset:0;width:100%;height:100%}
+.ph svg line{stroke:var(--x)}
+.ph span{position:relative;background:var(--note);color:#fff;font-size:13px;padding:6px 10px;border-radius:4px}
+.sec{border-top:1.5px solid var(--ink)}
+.alt{background:var(--ground2)}
+.dark{background:var(--ink);color:var(--ground)}
+.dark .eyebrow{color:#CFC9BC}
+.dark .ph{background:#3A3833}
+.dark .ph svg line{stroke:#55524B}
+.dark .ph span{background:var(--ground);color:var(--note);font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+/* banner */
+.proto{background:var(--note);color:#fff;font-size:14px}
+.proto .in{max-width:1200px;margin:0 auto;padding:10px 24px;display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;justify-content:space-between}
+.proto a{color:#fff;font-weight:700}
+.proto button{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.7);border-radius:999px;min-height:36px;padding:0 14px;font:inherit;cursor:pointer}
+/* header */
+header{position:sticky;top:0;z-index:5;background:var(--ground);border-bottom:1.5px solid var(--ink)}
+header .in{max-width:1200px;margin:0 auto;padding:16px 24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+.logo{width:48px;height:48px;border:1.5px dashed var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--mute)}
+nav{display:flex;flex-wrap:wrap;gap:4px 20px;font-size:15px;align-items:center}
+nav a{padding:10px 0;text-decoration:none;color:var(--ink)}
+nav a.cta{padding:10px 16px;color:var(--ground);background:var(--ink);border-radius:999px}
+/* form */
+form,.thanks{display:flex;flex-direction:column;gap:16px;background:var(--ground);border:1.5px solid var(--ink);border-radius:10px;padding:28px}
+.field{display:flex;flex-direction:column;gap:6px}
+label{font-weight:700;font-size:15px}
+input,textarea{min-height:46px;padding:10px 14px;border:1.5px solid var(--line);border-radius:6px;background:#fff;font:inherit;font-size:16px;color:var(--ink)}
+textarea{resize:vertical}
+.thanks{display:none}
+.sent form{display:none}.sent .thanks{display:flex}
+dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:12px 20px;font-size:17px}
+dt{font-weight:700}dd{margin:0;color:var(--ink2)}
+.map{position:relative;height:420px;background:#E4E8E2;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+footer .in{max-width:1200px;margin:0 auto;padding:32px 24px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;font-size:15px;color:var(--ink2)}
+</style>
+</head>
+<body>
+
+<div class="proto"><div class="in">
+<span>Boceto de propuesta · los recuadros azules marcan las fotos que necesitaremos</span>
+<span style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
+<a href="fotos.html">Ver lista de fotos</a>
+<button type="button" id="toggleNotes" aria-pressed="true">Ocultar notas</button>
+</span>
+</div></div>
+
+<header><div class="in">
+<div style="display:flex;align-items:center;gap:12px">
+<div class="logo">LOGO</div>
+<span class="brand" style="font-weight:700;font-size:24px;letter-spacing:.02em">Strega</span>
+</div>
+<nav aria-label="Secciones">
+<a href="#libreria">La librería</a>
+<a href="#encontraras">Qué encontrarás</a>
+<a href="#espacio">El espacio</a>
+<a href="#visita">Visítanos</a>
+<a href="#contacto" class="cta">Contacto</a>
+</nav>
+</div></header>
+
+<main>
+<section class="wrap row" style="padding-top:64px">
+<div class="col" style="gap:20px">
+<span class="eyebrow">Librería infantil boutique</span>
+<h1 style="margin:0;font-weight:700;font-size:clamp(36px,5vw,60px);line-height:1.04">Libros escogidos uno por uno para lectores pequeños.</h1>
+<p class="lead" style="font-size:19px;max-width:520px">Ven con calma: hojea, pregunta y quédate el tiempo que quieras. Aquí cada libro tiene una razón para estar.</p>
+<div class="btns" style="margin-top:8px">
+<a href="#visita" class="btn solid">Cómo llegar</a>
+<a href="#contacto" class="btn line">Escríbenos</a>
+</div>
+<p class="note" style="max-width:520px">Nota · El sitio invita a visitar la tienda, no vende en línea. Los botones llevan a la ubicación y al formulario.</p>
+</div>
+<div class="col" style="flex-basis:440px">
+<div class="ph" style="aspect-ratio:4/5"><svg aria-hidden="true" viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="0" y1="0" x2="100" y2="100" vector-effect="non-scaling-stroke"/><line x1="100" y1="0" x2="0" y2="100" vector-effect="non-scaling-stroke"/></svg><span>FOTO 01 · Interior completo, luz cálida</span></div>
+</div>
+</section>
+
+<section id="libreria" class="sec alt">
+<div class="wrap row">
+<div class="col" style="flex-basis:360px">
+<div class="ph" style="aspect-ratio:1/1"><svg aria-hidden="true" viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="0" y1="0" x2="100" y2="100" vector-effect="non-scaling-stroke"/><line x1="100" y1="0" x2="0" y2="100" vector-effect="non-scaling-stroke"/></svg><span>FOTO 02 · Retrato de Tessie entre estantes</span></div>
+</div>
+<div class="col" style="flex-basis:460px">
+<span class="eyebrow">La librería</span>
+<h2>Una curaduría hecha a mano</h2>
+<p class="lead">Tessie Solinis elige cada título: los favoritos de siempre, las novedades que valen la pena y esos libros raros que no encuentras en otro lado. Si buscas algo para alguien en especial, ella te ayuda a encontrarlo.</p>
+<p class="note">Nota · El texto final lo escribimos junto con Tessie, en su voz.</p>
+</div>
+</div>
+</section>
+
+<section id="encontraras" class="sec">
+<div class="wrap" style="display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:12px;max-width:640px">
+<span class="eyebrow">Qué encontrarás</span>
+<h2>De lo conocido a lo inesperado</h2>
+</div>
+<div class="grid">
+<article style="display:flex;flex-direction:column;gap:14px">
+<div class="ph" style="aspect-ratio:4/3"><svg aria-hidden="true" viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="0" y1="0" x2="100" y2="100" vector-effect="non-scaling-stroke"/><line x1="100" y1="0" x2="0" y2="100" vector-effect="non-scaling-stroke"/></svg><span>FOTO 03 · Mesa de novedades</span></div>
+<h3 style="margin:0;font-size:22px">Editoriales favoritas</h3>
+<p style="margin:0;font-size:16px;line-height:1.55;color:var(--ink2)">Los títulos y autores que los niños piden, elegidos con buen ojo.</p>
+</article>
+<article style="display:flex;flex-direction:column;gap:14px">
+<div class="ph" style="aspect-ratio:4/3"><svg aria-hidden="true" viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="0" y1="0" x2="100" y2="100" vector-effect="non-scaling-stroke"/><line x1="100" y1="0" x2="0" y2="100" vector-effect="non-scaling-stroke"/></svg><span>FOTO 04 · Libro raro o libro objeto</span></div>
+<h3 style="margin:0;font-size:22px">Curiosidades</h3>
+<p style="margin:0;font-size:16px;line-height:1.55;color:var(--ink2)">Ediciones especiales y joyas difíciles de encontrar en otras tiendas.</p>
+</article>
+<article style="display:flex;flex-direction:column;gap:14px">
+<div class="ph" style="aspect-ratio:4/3"><svg aria-hidden="true" viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="0" y1="0" x2="100" y2="100" vector-effect="non-scaling-stroke"/><line x1="100" y1="0" x2="0" y2="100" vector-effect="non-scaling-stroke"/></svg><span>FOTO 05 · Estantes por edad</span></div>
+<h3 style="margin:0;font-size:22px">Para cada etapa</h3>
+<p style="margin:0;font-size:16px;line-height:1.55;color:var(--ink2)">Desde los primeros cartoné hasta las primeras novelas.</p>
+</article>
+</div>
+</div>
+</section>
+
+<section id="espacio" class="sec dark">
+<div class="wrap" style="display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-wrap:wrap;gap:16px 48px;align-items:flex-end;justify-content:space-between">
+<div style="display:flex;flex-direction:column;gap:12px;max-width:560px">
+<span class="eyebrow">El espacio</span>
+<h2>Un lugar para quedarse un par de horas</h2>
+</div>
+<p style="margin:0;font-size:17px;line-height:1.55;color:#DDD8CC;max-width:420px">Rincones para sentarse a leer, estantes a la altura de los niños y tiempo para escoger sin prisa.</p>
+</div>
+<div class="grid4">
+<div class="ph" style="aspect-ratio:3/4"><svg aria-hidden="true" viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="0" y1="0" x2="100" y2="100" vector-effect="non-scaling-stroke"/><line x1="100" y1="0" x2="0" y2="100" vector-effect="non-scaling-stroke"/></svg><span>FOTO 06 · Rincón de lectura</span></div>
+<div class="ph" style="aspect-ratio:3/4"><svg aria-hidden="true" viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="0" y1="0" x2="100" y2="100" vector-effect="non-scaling-stroke"/><line x1="100" y1="0" x2="0" y2="100" vector-effect="non-scaling-stroke"/></svg><span>FOTO 07 · Detalle de estantes</span></div>
+<div class="ph" style="aspect-ratio:3/4"><svg aria-hidden="true" viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="0" y1="0" x2="100" y2="100" vector-effect="non-scaling-stroke"/><line x1="100" y1="0" x2="0" y2="100" vector-effect="non-scaling-stroke"/></svg><span>FOTO 08 · Niños hojeando libros</span></div>
+<div class="ph" style="aspect-ratio:3/4"><svg aria-hidden="true" viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="0" y1="0" x2="100" y2="100" vector-effect="non-scaling-stroke"/><line x1="100" y1="0" x2="0" y2="100" vector-effect="non-scaling-stroke"/></svg><span>FOTO 09 · Fachada / entrada</span></div>
+</div>
+</div>
+</section>
+
+<section id="visita" class="sec">
+<div class="wrap row" style="align-items:flex-start">
+<div class="col" style="flex-basis:340px;gap:20px">
+<span class="eyebrow">Visítanos</span>
+<h2>Te esperamos en la librería</h2>
+<dl>
+<dt>Dirección</dt><dd>[DIRECCIÓN]</dd>
+<dt>Horario</dt><dd>[DÍAS Y HORARIO]</dd>
+<dt>Teléfono</dt><dd>[TELÉFONO / WHATSAPP]</dd>
+</dl>
+<div class="btns">
+<a href="#visita" class="btn solid"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Abrir en Google Maps</a>
+<a href="#visita" class="btn line"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12z"/></svg>WhatsApp</a>
+</div>
+<p class="note">Nota · El sitio se conecta con su perfil de Google Maps: misma dirección, horario y fotos, para que aparezca mejor en búsquedas cercanas.</p>
+</div>
+<div class="col" style="flex-basis:520px">
+<div class="map" role="img" aria-label="Espacio para el mapa de Google">
+<svg aria-hidden="true" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%"><path d="M0 90 L400 60 M0 210 L400 240 M120 0 L150 300 M290 0 L250 300" stroke="#fff" stroke-width="10" fill="none"/><path d="M0 150 C120 130 260 175 400 140" stroke="#fff" stroke-width="5" fill="none"/></svg>
+<div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center;gap:6px">
+<span style="background:var(--ink);color:var(--ground);font-size:14px;font-weight:700;padding:6px 12px;border-radius:6px">Strega</span>
+<svg aria-hidden="true" width="34" height="34" viewBox="0 0 24 24" fill="#C2492B" stroke="#2A2925" stroke-width="1.2"><path d="M12 22s-7-6.4-7-12a7 7 0 0 1 14 0c0 5.6-7 12-7 12z"/><circle cx="12" cy="10" r="2.6" fill="#F6F4EF"/></svg>
+</div>
+<span style="position:absolute;left:14px;bottom:14px;background:var(--note);color:#fff;font-size:13px;padding:6px 10px;border-radius:4px">Mapa de Google interactivo</span>
+</div>
+</div>
+</div>
+</section>
+
+<section id="contacto" class="sec alt">
+<div class="wrap row" style="align-items:flex-start">
+<div class="col" style="flex-basis:340px;gap:16px">
+<span class="eyebrow">Contacto</span>
+<h2>¿Buscas un libro en especial?</h2>
+<p class="lead">Cuéntanos para quién es o qué le gusta leer, y te apartamos opciones para cuando vengas.</p>
+<p class="note">Nota · Cada mensaje del formulario le llega directo a Tessie.</p>
+</div>
+<div class="col" id="formBox" style="flex-basis:480px">
+<form id="form">
+<div class="field"><label for="f-nombre">Nombre</label><input id="f-nombre" type="text" placeholder="Tu nombre"></div>
+<div class="field"><label for="f-contacto">Correo o WhatsApp</label><input id="f-contacto" type="text" placeholder="Para responderte"></div>
+<div class="field"><label for="f-mensaje">Mensaje</label><textarea id="f-mensaje" rows="4" placeholder="Busco un libro para una niña de 6 años que ama los dinosaurios…"></textarea></div>
+<button type="submit" class="btn solid" style="align-self:flex-start">Enviar mensaje</button>
+</form>
+<div class="thanks" role="status">
+<h3 style="margin:0;font-size:26px">¡Gracias! Recibimos tu mensaje.</h3>
+<p style="margin:0;font-size:17px;color:var(--ink2)">Te respondemos pronto. Mientras tanto, ya sabes dónde encontrarnos.</p>
+<button type="button" id="again" class="btn line" style="align-self:flex-start">Enviar otro</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="sec"><div class="in">
+<span class="brand" style="font-weight:700;font-size:20px;color:var(--ink)">Strega</span>
+<div style="display:flex;flex-wrap:wrap;gap:20px">
+<a href="#visita" style="padding:10px 0">Instagram</a>
+<a href="#visita" style="padding:10px 0">WhatsApp</a>
+<a href="#visita" style="padding:10px 0">Google Maps</a>
+</div>
+<span>© 2026 Strega · Librería infantil</span>
+</div></footer>
+
+<script>
+(function(){
+  var box=document.getElementById('formBox');
+  document.getElementById('form').addEventListener('submit',function(e){e.preventDefault();box.classList.add('sent');});
+  document.getElementById('again').addEventListener('click',function(){box.classList.remove('sent');document.getElementById('form').reset();});
+  var t=document.getElementById('toggleNotes');
+  t.addEventListener('click',function(){
+    var off=document.body.classList.toggle('no-notes');
+    t.textContent=off?'Mostrar notas':'Ocultar notas';
+    t.setAttribute('aria-pressed',String(!off));
+  });
+})();
+</script>
+</body>
+</html>
